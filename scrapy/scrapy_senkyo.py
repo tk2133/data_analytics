@@ -17,6 +17,7 @@ def extract_url(url):
         url_lists[a.text] = a.attrs['href']
     return url_lists
 
+
 def extract_text(url, area, df):
     global row
     r = requests.get('http://www.tokyo-np.co.jp' + url)
@@ -42,6 +43,10 @@ def extract_text(url, area, df):
         row += 1
     return df
 
+url = 'http://k-db.com/stocks/'
+res = requests.get(url)
+soup = bs(res.content, "html.parser")
+soup
 if __name__ == '__main__':
     url = 'http://www.tokyo-np.co.jp/senkyo/togisen2017/tod/tod_touha.html'
     url_lists = extract_url(url)
