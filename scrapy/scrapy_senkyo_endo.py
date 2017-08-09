@@ -39,6 +39,6 @@ if __name__ == '__main__':
         url = i[1]
         make_win_list(url)
 
-    with open('/Users/takahiro-nakano/github_personal/scrapy/win_list.tsv', 'w') as f:
+    with open('./win_list.tsv', 'w') as f:
         for name in win_lists:
             f.write(name.replace('　','') + '\n')
